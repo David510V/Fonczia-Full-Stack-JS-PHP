@@ -27,8 +27,11 @@
                     else{
                         $hashedPassword=password_hash($password, PASSWORD_DEFAULT);
                         $stmt->execute([$userName,$school,$hashedPassword]);
-                       
-                        // $_SESSION['userId']=$userName;
+                        $stmt=$this->connect()->prepare("SELECT * FROM users WHERE userName= :name");
+                        $stmt->bindValue(':name',$userName);
+                        $stmt->execute();
+                        $user=$stmt->fetch(PDO::FETCH_ASSOC);
+                        $_SESSION['userId']=$user['idUser'];
                         $_SESSION['userName']=$userName;
                         header("Location: ../index.php?login=success");
                         exit();

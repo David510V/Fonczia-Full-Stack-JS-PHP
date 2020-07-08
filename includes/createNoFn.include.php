@@ -19,13 +19,13 @@ if(isset($_POST['create-nofn']))
     
 
     $dbs=new dbase;
-    $sth = $dbs->connect()->query('SELECT * FROM users');
+    $sth = $dbs->connect()->query('SELECT * FROM nofra');
     $sth = null;
     $dbs = null;
 }
 
 else{
-    header("Location../signup.php");
+    header("Location../index.php");
     exit();
 }
 ?>

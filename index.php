@@ -42,7 +42,7 @@
 
 
                  <div id="first" dir="ltr">
-                        <form class="form-group" action="includes/createNoFn.include.php" action="javascript:void(0);" method="post">
+                        <form id="form1" class="form-group" action="includes/createNoFn.include.php" action="javascript:void(0);" method="post" >
                         
                             <input class="parm " type="number" id="a" name="a" placeholder="A" >
                             <span class="myX mt-3">X</span>
@@ -64,7 +64,11 @@
 
                             <input class="parm" type="number" id="c" name="c" placeholder="C">
                             <br><br>
-                            <button type="submit" name="create-nofn" class="btn btn-primary" onclick="callChartFirst()"> כפתור </button><br><br>
+                            <?php if(isset($_SESSION['userName'])){
+                                echo "<button type='submit' name='create-nofn'  class='btn btn-primary' onclick='callChartFirst()'> כפתור </button><br><br>";
+                            }else{
+                              echo "<button type='button' class='btn btn-primary' onclick='callChartFirst()'> כפתור </button><br><br>";
+                            } ?>
                         </form>
                     
 
@@ -109,7 +113,7 @@
 
 
                  <div id="second"  dir="ltr">
-                    <form class="form-group" action="javascript:void(0)">
+                    <form class="form-group" action="includes/createYesFn.include.php" action="javascript:void(0);" method="post">
                         
                             <h4>מונה</h4>
                         <input class="parm " type="number" id="a1" name="a1" placeholder="A" >
@@ -159,10 +163,14 @@
                         <span class="myX mt-3">+</span> 
 
                         <input class="parm" type="number" id="c2" name="c2" placeholder="C">
-                        
+                        <br><br><br>
+                        <?php if(isset($_SESSION['userName'])){
+                                echo "<button type='submit' name='create-yesfn'  class='btn btn-primary' onclick='callChartSecond()'> כפתור </button><br><br>";
+                            }else{
+                              echo "<button type='submit' class='btn btn-primary' onclick='callChartSecond()'> כפתור </button><br><br>";
+                            } ?>
                         
                     </form><br><br>
-                    <button class="btn btn-primary" onclick="callChartSecond()"> כפתור </button><br><br>
                     <table class="table table table-bordered" >
                       <thead>
                         <tr>

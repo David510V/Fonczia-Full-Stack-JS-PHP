@@ -3,6 +3,26 @@ var myChart=new Chart(ctx,{});
 document.getElementById('first').style.display='block'
 document.getElementById('second').style.display='none'
 
+$('#form1').on('submit',function(e){
+  e.preventDefault();
+    var formData = new FormData(this);
+    $.ajax({
+        type:'POST',
+        url: $('#form1').attr('action'),
+        data:formData,
+        cache:false,
+        contentType: false,
+        processData: false,
+        success:function(){
+         console.log("wwww") 
+        },
+        error:function(){
+          console.log("eeerrrorr")
+        }
+
+    })
+})
+
 
 function typeOf(x){
   
@@ -18,6 +38,25 @@ function typeOf(x){
 
 
 function callChartFirst(){
+  $('#form1').on('submit',function(e){
+    e.preventDefault();
+      var formData = new FormData(this);
+      $.ajax({
+          type:'POST',
+          url: $('#form1').attr('action'),
+          data:formData,
+          cache:false,
+          contentType: false,
+          processData: false,
+          success:function(){
+           console.log("wwww") 
+          },
+          error:function(){
+            console.log("eeerrrorr")
+          }
+  
+      })
+  })
 // Parmeters
 var aString=document.getElementById("a").value
 var bString=document.getElementById("b").value
