@@ -1,7 +1,8 @@
+
+<!DOCTYPE html>
 <?php
 session_start()
 ?>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +16,6 @@ session_start()
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/fontawesome.min.js" integrity="sha256-kfloLmH/F2aW936XePvhgKlJH4TZMn/nAG5oxtuiy8Q=" crossorigin="anonymous"></script>
-    <script src="js/jquery.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css" integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous">
     

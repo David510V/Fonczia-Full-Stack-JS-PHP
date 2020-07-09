@@ -1,7 +1,6 @@
 <?php
 session_start();
-if(isset($_POST['create-nofn']))
-{
+
     include_once '../classes/db.class.php';
     include_once '../classes/createNoFn.class.php';
 
@@ -22,10 +21,5 @@ if(isset($_POST['create-nofn']))
     $sth = $dbs->connect()->query('SELECT * FROM nofra');
     $sth = null;
     $dbs = null;
-}
 
-else{
-    header("Location../index.php");
-    exit();
-}
 ?>

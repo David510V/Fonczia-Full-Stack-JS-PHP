@@ -26,24 +26,25 @@
                     $passwordCheck=password_verify($password, $user['passUser']);
                    
                     if($passwordCheck==false){
-                        header("Location: ../index.php?error=wrongPassword");
+                        header("Location: ../login.php?error=wrongPassword");
                         exit();
                     }
                     else if($passwordCheck==true){
                         session_start();
                         $_SESSION['userId']=$user['idUser'];
+                        $_SESSION['school']=$user['school'];
                         $_SESSION['userName']=$user['userName'];
 
                         header("Location: ../index.php?login=success");
                         exit();
                     }
                     else{
-                        header("Location: ../index.php?error=mysqlWrong");
+                        header("Location: ../login.php?error=mysqlWrong");
                         exit();
                     }
                 }
                 else{
-                    header("Location: ../index.php?error=noUser"); 
+                    header("Location: ../login.php?error=noUser"); 
                     exit();
                 }
             }

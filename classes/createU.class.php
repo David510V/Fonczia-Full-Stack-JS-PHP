@@ -32,8 +32,10 @@
                         $stmt->execute();
                         $user=$stmt->fetch(PDO::FETCH_ASSOC);
                         $_SESSION['userId']=$user['idUser'];
+                        $_SESSION['school']=$user['school'];
                         $_SESSION['userName']=$userName;
-                        header("Location: ../index.php?login=success");
+                        header("Location: ../index.php?register=success");
+                        
                         exit();
                     }
                 }

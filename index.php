@@ -1,4 +1,22 @@
-<?php include 'header.php' ?>
+<?php include 'header.php';
+
+  if(isset($_GET['register'])== "success"){
+    echo '<div style="margin: 1vh 10vw 2vh 10vw;
+    background-color: #FA8B43;
+    text-align:center;
+    color: black;
+    font-size: 2vw;"> בהצלחה תותח/ית ! </div>';
+  }
+
+  if(isset($_GET['login'])=="success"){
+    echo '<div style="margin: 1vh 10vw 2vh 10vw;
+    background-color: #FA8B43;
+    text-align:center;
+    color: black;
+    font-size: 2vw;">!'.$_SESSION['userName'].' כיף לראות אותך</div>';
+  }
+
+?>
 <h1 class="head">Fonczia-Math Functions Display</h1>
 
 <?php
@@ -42,7 +60,7 @@
 
 
                  <div id="first" dir="ltr">
-                        <form id="form1" class="form-group" action="includes/createNoFn.include.php" action="javascript:void(0);" method="post" >
+                        <form id="form1" class="form-group" >
                         
                             <input class="parm " type="number" id="a" name="a" placeholder="A" >
                             <span class="myX mt-3">X</span>
@@ -65,7 +83,7 @@
                             <input class="parm" type="number" id="c" name="c" placeholder="C">
                             <br><br>
                             <?php if(isset($_SESSION['userName'])){
-                                echo "<button type='submit' name='create-nofn'  class='btn btn-primary' onclick='callChartFirst()'> כפתור </button><br><br>";
+                                echo "<button type='submit' name='create-nofn' class='btn btn-primary' onclick='callChartFirst()'> כפתור </button><br><br>";
                             }else{
                               echo "<button type='button' class='btn btn-primary' onclick='callChartFirst()'> כפתור </button><br><br>";
                             } ?>
@@ -113,7 +131,7 @@
 
 
                  <div id="second"  dir="ltr">
-                    <form class="form-group" action="includes/createYesFn.include.php" action="javascript:void(0);" method="post">
+                    <form class="form-group" id="form2">
                         
                             <h4>מונה</h4>
                         <input class="parm " type="number" id="a1" name="a1" placeholder="A" >
@@ -167,7 +185,7 @@
                         <?php if(isset($_SESSION['userName'])){
                                 echo "<button type='submit' name='create-yesfn'  class='btn btn-primary' onclick='callChartSecond()'> כפתור </button><br><br>";
                             }else{
-                              echo "<button type='submit' class='btn btn-primary' onclick='callChartSecond()'> כפתור </button><br><br>";
+                              echo "<button type='button' class='btn btn-primary' onclick='callChartSecond()'> כפתור </button><br><br>";
                             } ?>
                         
                     </form><br><br>

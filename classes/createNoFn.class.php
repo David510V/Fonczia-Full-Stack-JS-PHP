@@ -18,7 +18,7 @@
                 }
                 else{
                     $stmt->execute([$idUser,$a,$b,$c,$d,$pow1,$pow2,$pow3]);
-                   
+                    
                 }
                 
            }

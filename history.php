@@ -6,25 +6,30 @@
         <div class="row">
             
             <div class="col-md-12 text-center">
-                <h2>שם</h2>
-                <h2>בית ספר</h2>
+                <?php
+                $userName=$_SESSION['userName'];
+                $school= $_SESSION['school'];
+                 echo " <h2>  $userName :שם</h2>";
+                 echo "<h2> בית ספר: $school</h2>";
+                 ?>
                 <div class="wrapper">
                     <div class="title">
-                        <p>h1</p>
+                        <h2>בלי שבר</h2>
+                        <?php
+                            include './classes/getFn.class.php';
+                            $getFn= new getFn;
+                            $getFn->getFunction();
+                        ?>
                     </div>
                     <div class="canvas">
-                        <canvas id="myChart2"></canvas>
+                        <h2>עם שבר</h2>
+                       <?php 
+                        include_once './classes/getYesFn.class.php';
+                        $getYesFn=new getYesFn;
+                        $getYesFn->getYesFunction();
+                       ?>
                     </div>
                 </div>
-                    <hr>
-                <div class="wrapper">
-                    <div class="title">
-                       <p>h1</p>
-                    </div>
-                    <div class="canvas">
-                        <canvas id="myChart3"></canvas>
-                    </div>
-                    </div>
             </div>
           
         </div>

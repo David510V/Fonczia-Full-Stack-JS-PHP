@@ -1,7 +1,6 @@
 <?php
 session_start();
-if(isset($_POST['create-yesfn']))
-{
+
     include_once '../classes/db.class.php';
     include_once '../classes/createYesFn.class.php';
 
@@ -29,10 +28,5 @@ if(isset($_POST['create-yesfn']))
     $sth = $dbs->connect()->query('SELECT * FROM yesfra');
     $sth = null;
     $dbs = null;
-}
 
-else{
-    header("Location../index.php");
-    exit();
-}
 ?>

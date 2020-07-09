@@ -141,6 +141,22 @@ body{
         width: 100px;
     }
 
+    .success{
+        margin: auto;
+        background-color: #FA8B43;
+        color: black;
+        font-size: 2vw;
+        text-align: center;
+    }
+
+    .fractional .one{
+        width: 50%;
+    }
+    .fractional .two{
+        width: 50%;
+        display: block;
+    }
+
 /* ///////// */
 
 

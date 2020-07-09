@@ -1,9 +1,41 @@
-const form1=document.getElementById("form1")
 
-form1.addEventListener('submit',function(e){
+document.querySelector("#form1").addEventListener('submit',function(e){
   e.preventDefault()
+  var form1=document.querySelector("#form1")
+  var  data=new URLSearchParams();
+  for(var pair of new FormData(form1)){
+    data.append(pair[0],pair[1])
+  }
+  fetch('includes/createNoFn.include.php',{
+    method:'POST',
+    body:data
+  }).then(function (response){
+    console.log(response.text())
+  }).then(function(text){
+    console.log("Work", data)
+  }).catch(function(error){
+    console.error(error)
+  })
+})
 
-  console.log("NICE")
+
+document.querySelector("#form2").addEventListener('submit',function(e){
+  e.preventDefault()
+  var form2=document.querySelector("#form2")
+  var  data2=new URLSearchParams();
+  for(var pair of new FormData(form2)){
+    data2.append(pair[0],pair[1])
+  }
+  fetch('includes/createYesFn.include.php',{
+    method:'POST',
+    body:data2
+  }).then(function (response){
+    console.log(response.text())
+  }).then(function(text){
+    console.log("Create Yes", data2)
+  }).catch(function(error){
+    console.error(error)
+  })
 })
 
 
@@ -49,7 +81,24 @@ var pow2=Number(pow2String)
 var pow3=Number(pow3String)
 
 
-// if (myChart) myChart.destroy();
+if (myChart) myChart.destroy();
+
+
+
+// fetch('includes/createNoFn.include.php',{
+//     method:'post',
+//     body:formData,
+
+//   }).then(function (response){
+//     return response.text()
+//   }).then(function(text){
+//     console.log(text)
+//   }).catch(function(error){
+//     console.error(error)
+//   })
+
+
+
 
 function ourFn(x){
 
@@ -235,9 +284,6 @@ var DownToY=[]
             break;
           }
         }
-
-        console.log("yes")
-        console.log("NO")
           /// EXTREME DOTS /// 
           var div='' // taking a Var and putting an HTML code in it in order to get a table in my HTML template//
           div +=`<div>`
@@ -303,7 +349,7 @@ var DownToY=[]
               div4 +=`<span> X ≠ ${gender}</span><br>`
             }
             }
-          document.getElementById("gender").innerHTML= div4s
+          document.getElementById("gender").innerHTML= div4
 
 
 
