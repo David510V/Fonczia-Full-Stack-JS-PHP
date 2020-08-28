@@ -1,4 +1,4 @@
-# Fonczia-Full-Stack-JS-PHP
+# Fonczia-FullStack JS PHP Web App
 
 ### A Web application created dedicated to the 10th to 12th graders studying mathematics in Israel. 
 The purpose of the app is to give a better understanding the topic of mathematical functions.
