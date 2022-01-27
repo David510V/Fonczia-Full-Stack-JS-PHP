@@ -33,4 +33,4 @@ X: 0, Y:5 | Up: X<0.5, X>0.5 Down: X<1, X>1 | X:-0.5 , Y:8  X:1 Y:9 | X≠0.
 * MySQL
 
 
-[To Fonczia](http://fonczia.epizy.com/)
+
